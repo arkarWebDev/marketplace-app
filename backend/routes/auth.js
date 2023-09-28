@@ -9,8 +9,18 @@ const authController = require("../controllers/auth");
 router.post(
   "/register",
   [
-    body("name").trim().isEmpty().withMessage("Name must have."),
-    body("password").trim().isEmpty().withMessage("Password must have."),
+    body("name")
+      .trim()
+      .notEmpty()
+      .withMessage("Name must have.")
+      .isLength({ min: 3 })
+      .withMessage("Name must have 3 characters."),
+    body("password")
+      .trim()
+      .notEmpty()
+      .withMessage("Password must have.")
+      .isLength({ min: 5 })
+      .withMessage("Password must have 5 characters."),
     body("email").trim().isEmail().withMessage("Please enter a vaild E-mail !"),
   ],
   authController.register
@@ -21,7 +31,12 @@ router.post(
 router.post(
   "/login",
   [
-    body("password").trim().isEmpty().withMessage("Password must have."),
+    body("password")
+      .trim()
+      .notEmpty()
+      .withMessage("Password must have.")
+      .isLength({ min: 5 })
+      .withMessage("Password must have 5 characters."),
     body("email").trim().isEmail().withMessage("Please enter a vaild E-mail !"),
   ],
   authController.login
