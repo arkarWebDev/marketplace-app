@@ -2,10 +2,21 @@ import { Checkbox, Col, Form, Input, Row, Select, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { SquaresPlusIcon } from "@heroicons/react/24/solid";
 
-import { sellProduct } from "../../apicalls/product";
+import {
+  sellProduct,
+  getOldProduct,
+  updateProduct,
+} from "../../apicalls/product";
+import { useEffect, useState } from "react";
 
-const AddProduct = ({ setActiveTabKey }) => {
+const AddProduct = ({
+  setActiveTabKey,
+  getProducts,
+  editMode,
+  editProductId,
+}) => {
   const [form] = Form.useForm();
+  const [sellerId, setSellerId] = useState(null);
 
   const options = [
     {
@@ -54,10 +65,18 @@ const AddProduct = ({ setActiveTabKey }) => {
 
   const onFinishHandler = async (values) => {
     try {
-      const response = await sellProduct(values);
+      let response;
+      if (editMode) {
+        values.seller_id = sellerId;
+        values.product_id = editProductId;
+        response = await updateProduct(values);
+      } else {
+        response = await sellProduct(values);
+      }
       if (response.isSuccess) {
         form.resetFields();
         message.success(response.message);
+        getProducts();
         setActiveTabKey("1");
       } else {
         throw new Error(response.message);
@@ -66,9 +85,48 @@ const AddProduct = ({ setActiveTabKey }) => {
       message.error(err.message);
     }
   };
+
+  const getOldProductData = async () => {
+    try {
+      const response = await getOldProduct(editProductId);
+      if (response.isSuccess) {
+        message.success("Edit mode on!!");
+        const { name, description, price, usedFor, category, details, seller } =
+          response.productDoc;
+        setSellerId(seller);
+        const modifiedProduct = {
+          product_name: name,
+          product_description: description,
+          product_price: price,
+          product_category: category,
+          product_details: details,
+          product_used_for: usedFor,
+        };
+        form.setFieldsValue(modifiedProduct);
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (err) {
+      message.error(err.message);
+    }
+  };
+
+  useEffect(
+    (_) => {
+      if (editMode) {
+        getOldProductData();
+      } else {
+        form.resetFields();
+      }
+    },
+    [editMode]
+  );
+
   return (
     <section>
-      <h1 className="text-3xl font-semibold my-2">What you want to sell ?</h1>
+      <h1 className="text-3xl font-semibold my-2">
+        {editMode ? "Update your product here." : "What you want to sell ?"}
+      </h1>
       <Form layout="vertical" onFinish={onFinishHandler} form={form}>
         <Form.Item
           name="product_name"
@@ -146,7 +204,7 @@ const AddProduct = ({ setActiveTabKey }) => {
           className=" font-medium text-lg text-center py-1 rounded-md bg-blue-500 text-white flex items-center gap-2 justify-center w-full"
         >
           <SquaresPlusIcon width={30} />
-          Sell
+          {editMode ? "Update Product" : "Sell Product"}
         </button>
       </Form>
     </section>
