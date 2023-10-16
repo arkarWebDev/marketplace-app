@@ -51,3 +51,15 @@ export const deleteProduct = async (id) => {
     return error.message;
   }
 };
+
+// upload image
+export const uploadImage = async (formData) => {
+  try {
+    const response = await axiosInstance.post(`/upload`, formData, {
+      validateStatus: () => true,
+    });
+    return response.data;
+  } catch (error) {
+    return error.message;
+  }
+};
