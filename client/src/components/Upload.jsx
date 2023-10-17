@@ -24,11 +24,8 @@ const Upload = () => {
       const updatedSeletedImages = [...images];
       updatedSeletedImages.splice(indexToDelete, 1);
 
-      const updatedPreviewImages = [...previewImages];
-      updatedPreviewImages.splice(indexToDelete, 1);
-
       setImages(updatedSeletedImages);
-      setPreviewImages(updatedSeletedImages);
+      setPreviewImages((prevImg) => prevImg.filter((e) => e !== img));
 
       URL.revokeObjectURL(img);
     }

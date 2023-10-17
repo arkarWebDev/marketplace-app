@@ -84,4 +84,8 @@ router.post(
 // DELETE /products/:id
 router.delete("/products/:id", authMiddleware, productController.deleteProduct);
 
+// upload product
+// POST /upload
+router.post("/upload", authMiddleware, productController.uploadProductImage);
+
 module.exports = router;
