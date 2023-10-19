@@ -1,9 +1,15 @@
 import { Checkbox, Col, Form, Input, Row, Select, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import { SquaresPlusIcon } from "@heroicons/react/24/solid";
+import {
+  SquaresPlusIcon,
+  EllipsisHorizontalIcon,
+} from "@heroicons/react/24/solid";
 
 import { sellProduct, getOldProduct, updateProduct } from "../apicalls/product";
 import { useEffect, useState } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
+import { setLoader } from "../store/slices/loaderSlice";
 
 const ProductForm = ({
   setActiveTabKey,
@@ -13,6 +19,9 @@ const ProductForm = ({
 }) => {
   const [form] = Form.useForm();
   const [sellerId, setSellerId] = useState(null);
+  const { isProcessing } = useSelector((state) => state.reducer.loader);
+
+  const dispatch = useDispatch();
 
   const options = [
     {
@@ -60,6 +69,7 @@ const ProductForm = ({
   ];
 
   const onFinishHandler = async (values) => {
+    dispatch(setLoader(true));
     try {
       let response;
       if (editMode) {
@@ -80,6 +90,7 @@ const ProductForm = ({
     } catch (err) {
       message.error(err.message);
     }
+    dispatch(setLoader(false));
   };
 
   const getOldProductData = async () => {
@@ -198,9 +209,20 @@ const ProductForm = ({
         <button
           type="submit"
           className=" font-medium text-lg text-center py-1 rounded-md bg-blue-500 text-white flex items-center gap-2 justify-center w-full"
+          disabled={isProcessing}
         >
-          <SquaresPlusIcon width={30} />
-          {editMode ? "Update Product" : "Sell Product"}
+          {editMode && !isProcessing && (
+            <>
+              <SquaresPlusIcon width={30} /> Update Product
+            </>
+          )}
+          {!editMode && !isProcessing && (
+            <>
+              <SquaresPlusIcon width={30} />
+              Sell Product
+            </>
+          )}
+          {isProcessing && <EllipsisHorizontalIcon width={30} />}
         </button>
       </Form>
     </section>
