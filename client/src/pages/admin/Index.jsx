@@ -50,7 +50,7 @@ const Index = () => {
     {
       key: "1",
       label: "Manage Products",
-      children: <Products products={products} />,
+      children: <Products products={products} getProducts={getProducts} />,
     },
     {
       key: "2",

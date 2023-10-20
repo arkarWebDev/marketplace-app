@@ -78,17 +78,22 @@ const Products = ({
                       {moment(product.createdAt).format("L")}
                     </td>
                     <td className="px-6 py-4">
-                      {product.status === "pending" ? (
+                      {product.status === "pending" && (
                         <span className=" bg-yellow-400 text-xs p-1 rounded-md text-white">
                           {product.status}
                         </span>
-                      ) : (
+                      )}{" "}
+                      {product.status === "approve" && (
                         <span className="bg-green-400 text-xs p-1 rounded-md text-white">
                           {product.status}
                         </span>
                       )}
+                      {product.status === "reject" && (
+                        <span className="bg-red-400 text-xs p-1 rounded-md text-white">
+                          {product.status}
+                        </span>
+                      )}
                     </td>
-
                     <td className="px-6 py-4">
                       <button
                         type="button"
