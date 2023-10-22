@@ -1,0 +1,683 @@
+[
+  {
+    "name": "Fashionable T-Shirt",
+    "description": "A stylish and comfortable t-shirt for everyday wear.",
+    "price": 25,
+    "category": "clothing_and_fashion",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-15T12:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-05T15:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Smartphone X",
+    "description": "A high-end smartphone with a stunning display and camera.",
+    "price": 699,
+    "category": "electronics_and_gadgets",
+    "usedFor": "3 weeks ago",
+    "details": ["Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-01T09:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-12T14:20:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Beauty Kit",
+    "description": "A complete beauty kit for skincare and makeup.",
+    "price": 50,
+    "category": "beauty_and_personal_care",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-20T14:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-02T17:25:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Bestselling Novel",
+    "description": "An exciting novel that will keep you hooked until the end.",
+    "price": 20,
+    "category": "books_and_media",
+    "usedFor": "2 months ago",
+    "details": ["Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-07-25T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-07T13:40:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Gym Equipment Set",
+    "description": "A complete set of gym equipment for your fitness needs.",
+    "price": 300,
+    "category": "sports_and_fitness",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-10T16:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-03T18:50:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "LEGO Official Set",
+    "description": "A creative LEGO set for endless building possibilities.",
+    "price": 40,
+    "category": "toys_and_games",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-05T11:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-14T12:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Elegant Sofa Set",
+    "description": "A luxurious sofa set to enhance your living room's beauty.",
+    "price": 500,
+    "category": "home_and_furniture",
+    "usedFor": "3 months ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-07-15T09:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-01T15:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Wireless Headphones",
+    "description": "High-quality wireless headphones for an immersive audio experience.",
+    "price": 80,
+    "category": "electronics_and_gadgets",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-10T14:25:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-16T17:55:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Luxury Perfume",
+    "description": "An exquisite luxury perfume with a captivating fragrance.",
+    "price": 75,
+    "category": "beauty_and_personal_care",
+    "usedFor": "3 weeks ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-09-18T12:40:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-19T14:10:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Classic Novel Set",
+    "description": "A collection of classic novels by renowned authors.",
+    "price": 60,
+    "category": "books_and_media",
+    "usedFor": "2 months ago",
+    "details": ["Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-08-28T10:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-13T13:50:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Fitness Tracker",
+    "description": "A versatile fitness tracker to monitor your health and workouts.",
+    "price": 40,
+    "category": "sports_and_fitness",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-09-02T15:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-17T16:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Board Game Set",
+    "description": "A fun board game set for entertaining family and friends.",
+    "price": 30,
+    "category": "toys_and_games",
+    "usedFor": "3 weeks ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-08-24T11:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-06T14:35:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Coffee Table Set",
+    "description": "Elegant coffee table set to beautify your living space.",
+    "price": 120,
+    "category": "home_and_furniture",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-12T13:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-04T16:20:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Wireless Mouse",
+    "description": "A high-performance wireless mouse for enhanced productivity.",
+    "price": 20,
+    "category": "electronics_and_gadgets",
+    "usedFor": "4 weeks ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-08T12:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-15T15:50:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Luxury Skincare Set",
+    "description": "A luxurious skincare set for a radiant and healthy complexion.",
+    "price": 75,
+    "category": "beauty_and_personal_care",
+    "usedFor": "5 weeks ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-09-12T10:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-18T16:35:00.000Z"
+    },
+    "__v": 0
+  },
+
+  {
+    "name": "High-Quality Watch",
+    "description": "A luxurious watch for style and elegance.",
+    "price": 200,
+    "category": "clothing_and_fashion",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-08-05T11:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-09T14:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Tablet with Stylus",
+    "description": "A tablet with a stylus for creative work and productivity.",
+    "price": 350,
+    "category": "electronics_and_gadgets",
+    "usedFor": "4 weeks ago",
+    "details": ["Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-09-10T10:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-18T16:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Skincare Essentials",
+    "description": "A set of essential skincare products for a healthy glow.",
+    "price": 45,
+    "category": "beauty_and_personal_care",
+    "usedFor": "3 weeks ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-15T12:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-19T13:55:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Cookbook Collection",
+    "description": "A collection of best-selling cookbooks for culinary enthusiasts.",
+    "price": 55,
+    "category": "books_and_media",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-08T09:50:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-11T15:25:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Dumbbell Set",
+    "description": "A set of dumbbells for strength training at home or the gym.",
+    "price": 75,
+    "category": "sports_and_fitness",
+    "usedFor": "3 weeks ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-25T11:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-21T14:35:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Video Game Console",
+    "description": "A popular video game console for gaming enthusiasts.",
+    "price": 299,
+    "category": "toys_and_games",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-30T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-05T13:40:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Modern Coffee Maker",
+    "description": "A modern coffee maker for brewing your favorite coffee.",
+    "price": 60,
+    "category": "home_and_furniture",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-08-14T13:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-10T16:25:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Bluetooth Earbuds",
+    "description": "Wireless Bluetooth earbuds for music on the go.",
+    "price": 40,
+    "category": "electronics_and_gadgets",
+    "usedFor": "3 weeks ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-09-20T14:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-20T15:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Fragrance Gift Set",
+    "description": "A gift set of luxurious fragrances for any occasion.",
+    "price": 50,
+    "category": "beauty_and_personal_care",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-08T15:35:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-19T16:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Artistic Painting Set",
+    "description": "A set of artistic paints and brushes for creative expression.",
+    "price": 65,
+    "category": "books_and_media",
+    "usedFor": "2 months ago",
+    "details": ["Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-28T14:50:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-13T16:10:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Yoga Mat Set",
+    "description": "A comfortable yoga mat for your fitness and relaxation.",
+    "price": 20,
+    "category": "sports_and_fitness",
+    "usedFor": "3 weeks ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-03T13:40:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-17T17:55:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Educational Toy Set",
+    "description": "An educational toy set for children's learning and fun.",
+    "price": 30,
+    "category": "toys_and_games",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-22T10:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-04T14:25:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Modern Dining Table",
+    "description": "A modern dining table to enhance your dining area.",
+    "price": 300,
+    "category": "home_and_furniture",
+    "usedFor": "4 weeks ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-05T12:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-06T15:35:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Smart LED Bulbs",
+    "description": "Smart LED bulbs for energy-efficient and customizable lighting.",
+    "price": 25,
+    "category": "electronics_and_gadgets",
+    "usedFor": "1 month ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-10T11:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-03T16:50:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Luxury Watches Set",
+    "description": "A set of luxury watches for different occasions.",
+    "price": 500,
+    "category": "clothing_and_fashion",
+    "usedFor": "5 weeks ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-09-12T14:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-18T16:10:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Gaming Console",
+    "description": "A gaming console for an immersive gaming experience.",
+    "price": 399,
+    "category": "electronics_and_gadgets",
+    "usedFor": "6 weeks ago",
+    "details": ["Warranty"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-09-01T10:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-12T15:35:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Designer Handbag",
+    "description": "A designer handbag for a touch of luxury in your style.",
+    "price": 299,
+    "category": "clothing_and_fashion",
+    "usedFor": "7 weeks ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-08-30T11:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-05T16:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Weightlifting Bench",
+    "description": "A weightlifting bench for a complete workout at home.",
+    "price": 150,
+    "category": "sports_and_fitness",
+    "usedFor": "2 months ago",
+    "details": ["Accessories", "Warranty"],
+    "images": [],
+    "status": "active",
+    "seller": {
+      "$oid": "6515c51539a80a42299da86f"
+    },
+    "createdAt": {
+      "$date": "2023-08-25T12:40:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-07T17:55:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "name": "Puzzle Game Set",
+    "description": "A puzzle game set to challenge your mind and have fun.",
+    "price": 20,
+    "category": "toys_and_games",
+    "usedFor": "8 weeks ago",
+    "details": ["Accessories", "Voucher"],
+    "images": [],
+    "status": "pending",
+    "seller": {
+      "$oid": "65316f9f20b7c9bc1bc44ba3"
+    },
+    "createdAt": {
+      "$date": "2023-08-10T14:50:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2023-10-03T17:45:00.000Z"
+    },
+    "__v": 0
+  }
+]
