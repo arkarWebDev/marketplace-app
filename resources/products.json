@@ -7,7 +7,7 @@
     "usedFor": "2 months ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -47,7 +47,7 @@
     "usedFor": "1 month ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -67,7 +67,7 @@
     "usedFor": "2 months ago",
     "details": ["Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -87,7 +87,7 @@
     "usedFor": "2 months ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -107,7 +107,7 @@
     "usedFor": "1 month ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -127,7 +127,7 @@
     "usedFor": "3 months ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -167,7 +167,7 @@
     "usedFor": "3 weeks ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -187,7 +187,7 @@
     "usedFor": "2 months ago",
     "details": ["Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -227,7 +227,7 @@
     "usedFor": "3 weeks ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -267,7 +267,7 @@
     "usedFor": "4 weeks ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -308,7 +308,7 @@
     "usedFor": "2 months ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -328,7 +328,7 @@
     "usedFor": "4 weeks ago",
     "details": ["Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -348,7 +348,7 @@
     "usedFor": "3 weeks ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -388,7 +388,7 @@
     "usedFor": "3 weeks ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -408,7 +408,7 @@
     "usedFor": "2 months ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -448,7 +448,7 @@
     "usedFor": "3 weeks ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -468,7 +468,7 @@
     "usedFor": "1 month ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -508,7 +508,7 @@
     "usedFor": "3 weeks ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -528,7 +528,7 @@
     "usedFor": "2 months ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -568,7 +568,7 @@
     "usedFor": "1 month ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },
@@ -588,7 +588,7 @@
     "usedFor": "5 weeks ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -628,7 +628,7 @@
     "usedFor": "7 weeks ago",
     "details": ["Accessories", "Voucher"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "65316f9f20b7c9bc1bc44ba3"
     },
@@ -648,7 +648,7 @@
     "usedFor": "2 months ago",
     "details": ["Accessories", "Warranty"],
     "images": [],
-    "status": "active",
+    "status": "pending",
     "seller": {
       "$oid": "6515c51539a80a42299da86f"
     },

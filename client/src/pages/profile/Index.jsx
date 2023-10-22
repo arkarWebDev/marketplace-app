@@ -4,6 +4,12 @@ import ManageProduct from "./ManageProduct";
 import General from "./General";
 import { useState, useEffect } from "react";
 import { getAllProducts } from "../../apicalls/product";
+import {
+  BellAlertIcon,
+  SquaresPlusIcon,
+  SwatchIcon,
+  UserIcon,
+} from "@heroicons/react/24/solid";
 
 const Index = () => {
   const [activeTabKey, setActiveTabKey] = useState("1");
@@ -39,7 +45,12 @@ const Index = () => {
   const items = [
     {
       key: "1",
-      label: "Products",
+      label: (
+        <span className="flex items-start gap-2">
+          <SwatchIcon width={20} />
+          Products
+        </span>
+      ),
       children: (
         <Products
           products={products}
@@ -53,7 +64,12 @@ const Index = () => {
     },
     {
       key: "2",
-      label: "Manage Product",
+      label: (
+        <span className="flex items-start gap-2">
+          <SquaresPlusIcon width={20} />
+          Manage Product
+        </span>
+      ),
       children: (
         <ManageProduct
           setActiveTabKey={setActiveTabKey}
@@ -66,12 +82,22 @@ const Index = () => {
     },
     {
       key: "3",
-      label: "Notification",
+      label: (
+        <span className="flex items-start gap-2">
+          <BellAlertIcon width={20} />
+          Notifications
+        </span>
+      ),
       children: "Content of Tab Pane 2",
     },
     {
       key: "4",
-      label: "General",
+      label: (
+        <span className="flex items-start gap-2">
+          <UserIcon width={20} />
+          Profile
+        </span>
+      ),
       children: <General />,
     },
   ];
