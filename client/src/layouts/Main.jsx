@@ -3,7 +3,7 @@ import Nav from "../components/Nav";
 
 const Main = () => {
   return (
-    <section className=" max-w-7xl mx-auto h-screen">
+    <section className="max-w-full mx-auto h-screen">
       <Nav />
       <Outlet />
     </section>

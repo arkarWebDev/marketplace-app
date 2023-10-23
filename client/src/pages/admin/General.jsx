@@ -15,7 +15,7 @@ const General = () => {
   };
 
   return (
-    <section>
+    <section className="p-2">
       <div className="flex items-end justify-between mb-4">
         <h1 className=" text-3xl font-semibold my-2">
           {role === "user" ? "User Profile" : "Admin Profile"}
