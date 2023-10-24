@@ -5,11 +5,15 @@ import {
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/solid";
 
-import { sellProduct, getOldProduct, updateProduct } from "../apicalls/product";
+import {
+  sellProduct,
+  getOldProduct,
+  updateProduct,
+} from "../../apicalls/product";
 import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setLoader } from "../store/slices/loaderSlice";
+import { setLoader } from "../../store/slices/loaderSlice";
 
 const ProductForm = ({
   setActiveTabKey,

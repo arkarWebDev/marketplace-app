@@ -6,11 +6,17 @@ import { UserIcon } from "@heroicons/react/24/solid";
 
 const Nav = () => {
   const { user } = useSelector((state) => state.reducer.user);
+
   return (
-    <nav className=" bg-blue-500 flex items-center justify-between text-white p-4">
+    <nav className=" flex items-center justify-between text-blue-600 py-4 mb-4">
       <Link className="font-bold text-4xl " to={"/"}>
-        PONIT.IO
+        TradeHub
       </Link>
+      <div className=" flex items-center gap-3">
+        <Link to={"/about"}>About</Link>
+        <Link to={"/about"}>Contact</Link>
+        <Link to={"/about"}>Q&A</Link>
+      </div>
       {user ? (
         <>
           {user.role === "user" && (

@@ -1,4 +1,4 @@
-import AuthForm from "../components/AuthForm";
+import AuthForm from "../../components/AuthPage/AuthForm";
 
 const Regiseter = () => {
   return <AuthForm isLoginPage={false} />;

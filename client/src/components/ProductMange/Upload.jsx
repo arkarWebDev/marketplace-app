@@ -4,12 +4,12 @@ import {
   deleteSavedImages,
   getSavedImages,
   uploadImage,
-} from "../apicalls/product";
+} from "../../apicalls/product";
 
 import { message } from "antd";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setLoader } from "../store/slices/loaderSlice";
+import { setLoader } from "../../store/slices/loaderSlice";
 
 const Upload = ({ editProductId, setActiveTabKey }) => {
   const [previewImages, setPreviewImages] = useState([]);

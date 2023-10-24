@@ -1,6 +1,6 @@
 import { Tabs } from "antd";
-import ProductForm from "../../components/ProductForm";
-import Upload from "../../components/Upload";
+import ProductForm from "../../components/ProductMange/ProductForm";
+import Upload from "../../components/ProductMange/Upload";
 
 const ManageProduct = ({
   setActiveTabKey,
