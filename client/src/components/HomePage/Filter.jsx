@@ -2,8 +2,13 @@ import { message } from "antd";
 import { getProductsByFilters } from "../../apicalls/product";
 import { useState } from "react";
 
+import { useDispatch } from "react-redux";
+import { setLoader } from "../../store/slices/loaderSlice";
+
 const Filter = ({ setProducts, getAllProducts }) => {
+  const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState("");
+
   const Categories = [
     {
       value: "clothing_and_fashion",
@@ -36,6 +41,8 @@ const Filter = ({ setProducts, getAllProducts }) => {
   ];
 
   const categoryHandler = async (i) => {
+    dispatch(setLoader(true));
+
     try {
       setSelectedCategory(i);
       const response = await getProductsByFilters(
@@ -50,6 +57,7 @@ const Filter = ({ setProducts, getAllProducts }) => {
     } catch (err) {
       message.error(err.message);
     }
+    dispatch(setLoader(false));
   };
 
   const clearHandler = () => {

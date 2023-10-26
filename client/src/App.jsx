@@ -7,6 +7,7 @@ import Profile from "./pages/profile/Index";
 import Admin from "./pages/admin/Index";
 import AuthProvider from "./providers/AuthProvider";
 import Details from "./pages/Homepage/Details";
+import SavedProducts from "./pages/savedProduct/Index";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -49,6 +50,14 @@ const App = () => {
         {
           path: "/products/:id",
           element: <Details />,
+        },
+        {
+          path: "/saved-products",
+          element: (
+            <AuthProvider>
+              <SavedProducts />
+            </AuthProvider>
+          ),
         },
       ],
     },

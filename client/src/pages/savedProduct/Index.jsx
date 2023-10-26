@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import Card from "../../components/HomePage/Card";
-import Filter from "../../components/HomePage/Filter";
-import Hero from "../../components/HomePage/Hero";
-import { getProducts } from "../../apicalls/product";
+import React, { useEffect, useState } from "react";
+import { getSavedProducts } from "../../apicalls/product";
 import { message } from "antd";
+import Card from "../../components/HomePage/Card";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setLoader } from "../../store/slices/loaderSlice";
@@ -11,17 +9,18 @@ import { setLoader } from "../../store/slices/loaderSlice";
 import { RotatingLines } from "react-loader-spinner";
 
 const Index = () => {
-  const [products, setProducts] = useState([]);
+  const [savedProducts, setSavedProducts] = useState([]);
   const dispatch = useDispatch();
 
   const { isProcessing } = useSelector((state) => state.reducer.loader);
 
-  const getAllProducts = async () => {
+  const getProducts = async () => {
     dispatch(setLoader(true));
     try {
-      const response = await getProducts();
+      const response = await getSavedProducts();
+
       if (response.isSuccess) {
-        setProducts(response.productDocs);
+        setSavedProducts(response.productDocs);
       } else {
         throw new Error(response.message);
       }
@@ -32,13 +31,14 @@ const Index = () => {
   };
 
   useEffect((_) => {
-    getAllProducts();
+    getProducts();
   }, []);
 
   return (
     <section>
-      <Hero setProducts={setProducts} getAllProducts={getAllProducts} />
-      <Filter setProducts={setProducts} getAllProducts={getAllProducts} />
+      <h1 className="text-2xl font-bold my-4 text-center">
+        Saved Product List
+      </h1>
       {isProcessing ? (
         <div className=" flex items-center justify-center">
           <RotatingLines
@@ -50,10 +50,19 @@ const Index = () => {
           />
         </div>
       ) : (
-        <div className="flex max-w-4xl mx-auto flex-wrap flex-row">
-          {products.map((product) => (
-            <Card product={product} key={product._id} />
-          ))}
+        <div className="flex gap-3">
+          {savedProducts && savedProducts.length > 0 && (
+            <>
+              {savedProducts.map((product) => (
+                <Card
+                  product={product.product_id}
+                  key={product._id}
+                  saved={true}
+                  getProducts={getProducts}
+                />
+              ))}
+            </>
+          )}
         </div>
       )}
     </section>
