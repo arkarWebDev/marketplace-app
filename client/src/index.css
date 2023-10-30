@@ -10,3 +10,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif !important;
 }
+
+body {
+  background: #eef4ff;
+}

@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getProductById } from "../../apicalls/product";
-import { message } from "antd";
+import { Form, Input, message } from "antd";
 import TradeHub from "../../images/TradeHub.jpg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { setLoader } from "../../store/slices/loaderSlice";
 
 import { RotatingLines } from "react-loader-spinner";
+import { ArrowLeftIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
 const Details = () => {
   const [product, setProduct] = useState({});
   const [selectedImage, setSelectedImage] = useState(0);
-  const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { isProcessing } = useSelector((state) => state.reducer.loader);
+  const { user } = useSelector((state) => state.reducer.user);
 
   const params = useParams();
 
@@ -98,18 +100,30 @@ const Details = () => {
                 )}
               </div>
               <div className="w-2/3 px-20">
-                <h1 className=" text-4xl font-bold my-1">{product.name}</h1>
-                <p className=" text-gray-500 font-medium leading-6 mb-4">
-                  {product.description}
-                </p>
+                <div className=" flex justify-between">
+                  <div className=" w-3/4">
+                    <h1 className=" text-4xl font-bold my-1">{product.name}</h1>
+                    <p className=" text-gray-500 font-medium leading-6 mb-4">
+                      {product.description}
+                    </p>
+                  </div>
+                  <ArrowLeftIcon
+                    width={30}
+                    height={30}
+                    className="text-blue-600 cursor-pointer"
+                    onClick={() => navigate(-1)}
+                  />
+                </div>
                 <hr />
                 <h1 className="text-2xl font-semibold my-2">Infomations</h1>
                 <div className="flex justify-between mb-4">
                   <div className=" font-medium space-y-2">
-                    <p>Type</p>
+                    <p>Price</p>
+                    <p>Category</p>
                     <p>Used for</p>
                   </div>
                   <div className=" text-gray-600 space-y-2 text-right">
+                    <p>{product.price} Kyats</p>
                     <p>{product.category.toUpperCase().replaceAll("_", " ")}</p>
                     <p>{product.usedFor}</p>
                   </div>
@@ -142,6 +156,70 @@ const Details = () => {
                     <p>{product.seller.email}</p>
                   </div>
                 </div>
+                <hr />
+                <h1 className="text-2xl font-semibold my-2">Bids</h1>
+                {user ? (
+                  <div className=" mb-10">
+                    <Form
+                      onFinish={() => {
+                        window.alert("Commented");
+                      }}
+                      layout="vertical"
+                    >
+                      <Form.Item
+                        name="message"
+                        label="Text "
+                        rules={[
+                          {
+                            required: true,
+                            message: "Message must contains.",
+                          },
+                          {
+                            min: 3,
+                            message: "Message must have 3 characters.",
+                          },
+                        ]}
+                        hasFeedback
+                      >
+                        <Input placeholder="write something ..."></Input>
+                      </Form.Item>
+                      <Form.Item
+                        name="phone"
+                        label="Phone Number"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Phone number must contains.",
+                          },
+                          {
+                            min: 3,
+                            message: "Phone number must have 3 characters.",
+                          },
+                        ]}
+                        hasFeedback
+                      >
+                        <Input placeholder="phone number ..."></Input>
+                      </Form.Item>
+                      <div className=" text-right mb-3">
+                        <button className=" text-white font-medium text-base px-2 py-1 rounded-md bg-blue-600">
+                          Submit Message
+                        </button>
+                      </div>
+                    </Form>
+                    <hr />
+                  </div>
+                ) : (
+                  <p className=" font-medium text-red-600">
+                    <Link to={"/login"} className=" underline">
+                      Login
+                    </Link>{" "}
+                    or{" "}
+                    <Link to={"/register"} className="underline">
+                      Register
+                    </Link>{" "}
+                    to bid this product.
+                  </p>
+                )}
               </div>
             </>
           )}

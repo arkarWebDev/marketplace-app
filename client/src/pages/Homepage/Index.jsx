@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../../components/HomePage/Card";
 import Filter from "../../components/HomePage/Filter";
 import Hero from "../../components/HomePage/Hero";
-import { getProducts } from "../../apicalls/product";
+import { getProducts, getSavedProducts } from "../../apicalls/product";
 import { message } from "antd";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ import { RotatingLines } from "react-loader-spinner";
 
 const Index = () => {
   const [products, setProducts] = useState([]);
+  const [savedProducts, setSavedProducts] = useState([]);
   const dispatch = useDispatch();
 
   const { isProcessing } = useSelector((state) => state.reducer.loader);
@@ -31,8 +32,24 @@ const Index = () => {
     dispatch(setLoader(false));
   };
 
+  const getSaveProducts = async () => {
+    dispatch(setLoader(true));
+    try {
+      const response = await getSavedProducts();
+      if (response.isSuccess) {
+        setSavedProducts(response.productDocs);
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (err) {
+      message.error(err.message);
+    }
+    dispatch(setLoader(false));
+  };
+
   useEffect((_) => {
     getAllProducts();
+    getSaveProducts();
   }, []);
 
   return (
@@ -50,9 +67,14 @@ const Index = () => {
           />
         </div>
       ) : (
-        <div className="flex max-w-4xl mx-auto flex-wrap flex-row">
+        <div className=" grid grid-cols-2 gap-4 max-w-4xl mx-auto">
           {products.map((product) => (
-            <Card product={product} key={product._id} />
+            <Card
+              product={product}
+              key={product._id}
+              savedProducts={savedProducts}
+              getAllProducts={getAllProducts}
+            />
           ))}
         </div>
       )}

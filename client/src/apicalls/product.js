@@ -131,7 +131,9 @@ export const getProductById = async (id) => {
 // save product
 export const savedProduct = async (id) => {
   try {
-    const response = await axiosInstance.post(`/saved-products/${id}`);
+    const response = await axiosInstance.post(`/saved-products/${id}`, {
+      validateStatus: () => true,
+    });
     return response.data;
   } catch (error) {
     return error.message;
