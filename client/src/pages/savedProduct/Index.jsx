@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getSavedProducts } from "../../apicalls/product";
-import { message } from "antd";
 import Card from "../../components/HomePage/Card";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +27,7 @@ const Index = () => {
         throw new Error(response.message);
       }
     } catch (err) {
-      message.error(err.message);
+      console.error(err.message);
     }
     dispatch(setLoader(false));
   };
@@ -73,6 +72,11 @@ const Index = () => {
             </>
           )}
         </div>
+      )}
+      {savedProducts.length === 0 && !isProcessing && (
+        <p className=" font-medium text-red-600 my-2">
+          No product are not saved yet.
+        </p>
       )}
     </section>
   );

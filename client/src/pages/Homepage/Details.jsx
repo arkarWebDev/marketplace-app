@@ -8,13 +8,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLoader } from "../../store/slices/loaderSlice";
 
 import { RotatingLines } from "react-loader-spinner";
-import { ArrowLeftIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import { getAllBids, savedNewBid } from "../../apicalls/bid";
+
+import { formatDistanceToNow } from "date-fns";
+import { notfiy } from "../../apicalls/notification";
 
 const Details = () => {
   const [product, setProduct] = useState({});
   const [selectedImage, setSelectedImage] = useState(0);
+  const [bids, setBids] = useState([]);
+  const [isPlaced, setIsPlaced] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [form] = Form.useForm();
 
   const { isProcessing } = useSelector((state) => state.reducer.loader);
   const { user } = useSelector((state) => state.reducer.user);
@@ -36,9 +44,52 @@ const Details = () => {
     dispatch(setLoader(false));
   };
 
+  const getBids = async () => {
+    try {
+      const response = await getAllBids(params.id);
+      if (response.isSuccess) {
+        setBids(response.bidDocs);
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   useEffect(() => {
     findById();
+    getBids();
   }, []);
+
+  const onFinishHandler = async (values) => {
+    setIsPlaced(true);
+    values.product_id = product._id;
+    values.seller_id = product.seller._id;
+    values.buyer_id = user._id;
+
+    try {
+      const response = await savedNewBid(values);
+      if (response.isSuccess) {
+        getBids();
+        form.resetFields();
+        message.success(response.message);
+
+        await notfiy({
+          title: "New bid placed.",
+          message: `New bid is placed in ${product.name} by ${user.name}.`,
+          owner_id: product.seller._id,
+          product_id: product._id,
+          phone_number: values.phone,
+        });
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (err) {
+      message.error(err.message);
+    }
+    setIsPlaced(false);
+  };
 
   return (
     <section
@@ -71,7 +122,7 @@ const Details = () => {
                     <div className="flex items-center gap-3 mt-3">
                       {product.images.map((i, index) => (
                         <div
-                          key={i}
+                          key={index}
                           className={`border-2 overflow-hidden border-blue-400 rounded-lg p-2 ${
                             selectedImage === index && "border-dashed"
                           }`}
@@ -157,15 +208,10 @@ const Details = () => {
                   </div>
                 </div>
                 <hr />
-                <h1 className="text-2xl font-semibold my-2">Bids</h1>
-                {user ? (
+                <h1 className="text-2xl font-semibold my-2">Place Your Bids</h1>
+                {user && user._id !== product.seller._id && (
                   <div className=" mb-10">
-                    <Form
-                      onFinish={() => {
-                        window.alert("Commented");
-                      }}
-                      layout="vertical"
-                    >
+                    <Form onFinish={onFinishHandler} layout="vertical">
                       <Form.Item
                         name="message"
                         label="Text "
@@ -198,17 +244,21 @@ const Details = () => {
                         ]}
                         hasFeedback
                       >
-                        <Input placeholder="phone number ..."></Input>
+                        <Input
+                          type="number"
+                          placeholder="phone number ..."
+                        ></Input>
                       </Form.Item>
                       <div className=" text-right mb-3">
                         <button className=" text-white font-medium text-base px-2 py-1 rounded-md bg-blue-600">
-                          Submit Message
+                          {isPlaced && "Submitting Message ..."}
+                          {!isPlaced && "Submit Message"}
                         </button>
                       </div>
                     </Form>
-                    <hr />
                   </div>
-                ) : (
+                )}
+                {!user && (
                   <p className=" font-medium text-red-600">
                     <Link to={"/login"} className=" underline">
                       Login
@@ -218,6 +268,36 @@ const Details = () => {
                       Register
                     </Link>{" "}
                     to bid this product.
+                  </p>
+                )}
+                {user._id === product.seller._id && (
+                  <p className=" font-medium text-red-600 mb-2">
+                    You are the product seller / owner. You can't placed bid.
+                  </p>
+                )}
+                <hr />
+                <h1 className="text-2xl font-semibold my-2">Recent Bids</h1>
+                <div>
+                  {bids.map((bid) => (
+                    <div
+                      className=" mb-4 bg-white px-2 py-4 rounded-lg"
+                      key={bid._id}
+                    >
+                      <h5 className=" font-medium text-base">
+                        {bid.buyer_id.name}
+                      </h5>
+                      <p className=" text-xs text-gray-400">
+                        {formatDistanceToNow(new Date(bid.createdAt))} ago
+                      </p>
+                      <p className=" text-gray-600 text-sm font-medium">
+                        {bid.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                {bids.length === 0 && (
+                  <p className=" my-2 font-medium text-red-600">
+                    Not bids are not placed yet.
                   </p>
                 )}
               </div>
