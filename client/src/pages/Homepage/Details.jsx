@@ -270,7 +270,7 @@ const Details = () => {
                     to bid this product.
                   </p>
                 )}
-                {user._id === product.seller._id && (
+                {user?._id === product.seller._id && (
                   <p className=" font-medium text-red-600 mb-2">
                     You are the product seller / owner. You can't placed bid.
                   </p>

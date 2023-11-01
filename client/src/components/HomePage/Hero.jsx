@@ -12,6 +12,9 @@ const Hero = ({ setProducts, getAllProducts }) => {
   const dispatch = useDispatch();
 
   const searchHandler = async () => {
+    if (searchKey.trim().length === 0) {
+      return message.error("SearchKey must have.");
+    }
     dispatch(setLoader(true));
     try {
       const response = await getProductsByFilters("searchKey", searchKey);
@@ -33,10 +36,10 @@ const Hero = ({ setProducts, getAllProducts }) => {
 
   return (
     <div className="w-full text-center mb-2 mt-10">
-      <h1 className="text-4xl font-bold text-blue-600 mb-4">
+      <h1 className="text-5xl font-bold text-blue-600 mb-4">
         "Discover, Connect, and Thrive with TradeHub"
       </h1>
-      <p className=" text-lg font-medium text-gray-500 max-w-xl mx-auto mb-4">
+      <p className=" text-lg font-medium text-gray-500 max-w-xl mx-auto my-4">
         Bings buyers and sellers together, providing trust, community, and
         success. Explore, connect, and thrive with us.
       </p>
@@ -44,7 +47,7 @@ const Hero = ({ setProducts, getAllProducts }) => {
         <div className=" relative w-full">
           <input
             type="text"
-            className=" bg-gray-100 outline-none p-2 rounded-xl w-full "
+            className=" bg-white outline-none p-2 rounded-xl w-full "
             value={searchKey}
             onChange={(e) => setSearchKey(e.target.value)}
           />

@@ -105,7 +105,9 @@ const Index = () => {
           Notifications
         </span>
       ),
-      children: <Notification notifications={notifications} />,
+      children: (
+        <Notification notifications={notifications} getNoti={getNoti} />
+      ),
     },
     {
       key: "4",
