@@ -1,5 +1,6 @@
 import { Tabs, message } from "antd";
 import { useEffect, useState } from "react";
+import Dashboard from "./DashBoard";
 import Products from "./Products";
 import Users from "./Users";
 import Notification from "./Notification";
@@ -8,7 +9,6 @@ import General from "./General";
 
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
 import {
   BellAlertIcon,
   ChartBarIcon,
