@@ -33,7 +33,7 @@ const publicRoutes = require("./routes/public");
 const app = express();
 
 // global middlewares
-app.use(cors({ origin: "https://marketplace-client-v953.onrender.com/" }));
+app.use(cors({ origin: "https://marketplace-client-v953.onrender.com" }));
 app.use(bodyParser.json());
 
 app.use(
